@@ -1,0 +1,95 @@
+<div class="editProductModal" ng-show="educationCtrl.editValue" ng-click="educationCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="editProductModalContentHeader">Edit Degree</div>
+    <table>
+      <tr>
+        <td class="editProductModalContentLabel">Degree Name</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="educationCtrl.degreeName"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Degree Abbrevation</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="educationCtrl.degreeAbbreviation"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Specialization</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.specialization_name">                               
+            <option ng-repeat="detail in educationCtrl.details | unique: 'specialization_id' | filter:{specialization_id: '!!'}" 
+                  value="{{detail.specialization_id}}" 
+                  ng-selected="{{detail.specialization_id == educationCtrl.specialization_name}}">
+                  {{detail.specialization_id}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Speciality Type</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.speciality_type_id">                               
+            <option ng-repeat="speciality_type_id in educationCtrl.speciality | unique: 'name'" 
+                    value="{{speciality_type_id.name}}" 
+                    ng-selected="{{speciality_type_id.name == educationCtrl.speciality_type_id}}">
+                    {{speciality_type_id.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Level</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.level">                               
+            <option ng-repeat="detail in educationCtrl.details | unique: 'level' | filter:{level: '!!'}" 
+                  value="{{detail.level}}" 
+                  ng-selected="detail.level == educationCtrl.level">
+                  {{detail.level}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Frequency</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.frequency">                               
+            <option ng-repeat="detail in educationCtrl.details | unique: 'frequency' | filter:{frequency: '!!'}" 
+                  value="{{detail.frequency}}" 
+                  ng-selected="{{detail.frequency == educationCtrl.frequency}}">
+                  {{detail.frequency}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Prefix</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.prefix">                               
+            <option ng-repeat="detail in educationCtrl.details | unique: 'prefix' | filter:{prefix: '!!'}" 
+                  value="{{detail.prefix}}" 
+                  ng-selected="{{detail.prefix == educationCtrl.prefix}}">
+                  {{detail.prefix}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Type of Education</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="educationCtrl.education_type_id">                               
+            <option ng-repeat="detail in educationCtrl.details | unique: 'education_type_id' | filter:{education_type_id: '!!'}" 
+                  value="{{detail.education_type_id}}" 
+                  ng-selected="detail.education_type_id == educationCtrl.education_type_id">
+                  {{detail.education_type_id}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div class="editProductModalContentFooter">
+      <button class="editProductModalContentFooterSave" ng-click="educationCtrl.approve(educationCtrl.degreeName, educationCtrl.degreeAbbreviation, educationCtrl.specialization_name, educationCtrl.speciality_type_id, educationCtrl.level, educationCtrl.frequency, educationCtrl.prefix, educationCtrl.education_type_id)">Approve</button>
+      <button class="editProductModalContentFooterCancel" ng-click="educationCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

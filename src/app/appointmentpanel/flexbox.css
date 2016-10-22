@@ -1,0 +1,158 @@
+.appointment-flex-container{
+  font-family: "Signika Negative",Helvetica,Arial,sans-serif;
+  display: flex;
+  flex-flow: column nowrap;
+  color: #6C6C6C;
+}
+
+.appointment-flex-container .box{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.appointment-flex-container .column{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.header-top{
+  flex: none;
+  flex-basis: 60px;
+  align-items: center;
+}
+.appointment-flex-container .filter{
+  flex: none;
+  align-items: center;
+}
+
+.header-top .panel-name{
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-top .user-name{
+  flex-grow: 0;
+  text-align: center;
+}
+
+.header-top .logout{
+  flex-grow: 0;
+  text-align: right;
+}
+.appointment-flex-container .box .left-main{
+  flex-grow: 1;
+  text-align: center;
+}
+
+.appointment-flex-container .box .right-main{
+  flex-grow: 2;
+}
+
+.appointment-flex-container .box .empty-right-main{
+  flex-grow: 2;
+}
+
+.appointment-flex-container .box .left-main .sort{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .left-main .center{
+  text-align: center;
+}
+
+.appointment-flex-container .box .left-main .right{
+  text-align: right;
+}
+
+.appointment-flex-container .box .left-main .appId{
+  flex: .75 0 0;
+  text-align: center;
+}
+.appointment-flex-container .box .left-main .username{
+  flex: 1 0 0;
+  text-align: center;
+}
+
+.appointment-flex-container .box .left-main .app-date{
+  flex: 1.25 0 0;
+  text-align: center;
+  width: 130px;
+  word-wrap: break-word;
+}
+
+.appointment-flex-container .box .left-main .status{
+  flex: 1 0 0;
+  text-align: center;
+}
+
+.appointment-flex-container .box .right-main .service{
+  flex-grow: 1;
+}
+
+.appointment-flex-container .box .right-main .hospital{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .right-main .call-timings{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .right-main .user-name{
+  flex-grow: 1;
+}
+
+.appointment-flex-container .box .right-main .user-contact{
+  flex-grow: 1;
+}
+
+.appointment-flex-container .box .right-main .user-email{
+  flex-grow: 1;
+}
+
+.appointment-flex-container .box .right-main .contact{
+  flex-grow: 1;
+}
+
+.preference{
+  flex-grow: 1;
+}
+
+.appointment-flex-container .box .right-main .confirm{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .right-main .cancel{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .right-main .call-later{
+  flex-grow: 1;
+  text-align: left;
+}
+
+.appointment-flex-container .box .right-main .could-not-connect{
+  flex-grow: 1;
+  text-align: left;
+}
+.symptoms{
+  flex-grow: 1;
+  text-align: left;
+}
+.symptoms-input{
+  flex-grow: 5;
+  text-align: left;
+}

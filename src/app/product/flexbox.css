@@ -1,0 +1,701 @@
+.box{
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  position: relative;
+}
+
+.navigation-main{
+  flex: 1 0 0;
+}
+.right-main{
+  flex-grow: 2;
+}
+.black-main{
+  flex: 2 0 0;
+}
+.testing{
+  display: flex;
+}
+.createNewProduct{
+  flex-grow: 3
+}
+.wrap{
+  flex: 1 0 0;
+  width: 96%
+}
+.productTableHead .degreeId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 80px;
+  word-wrap: break-word;
+}
+.productTableHead .degreeName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 180px;
+  word-wrap: break-word;
+}
+.productTableHead .abbrevation{
+  flex: 1 0 0;
+  text-align: center;
+  width: 105px;
+  word-wrap: break-word;
+}
+.productTableHead .specialization > select{
+  flex: 1 0 0;
+  text-align: center;
+  width: 114px;
+  word-wrap: break-word;  
+}
+.productTableHead .specialization{
+  flex: 1 0 0;
+  text-align: center;
+  width: 125px;
+  word-wrap: break-word;
+}
+.productTableHead .specilityType{
+  flex: 1 0 0;
+  text-align: center;
+  width: 116px;
+  word-wrap: break-word;
+}
+.productTableHead .level{
+  flex: 1 0 0;
+  text-align: center;
+  width: 58px;
+  word-wrap: break-word;
+}
+.productTableHead .frequency{
+  flex: 1 0 0;
+  text-align: center;
+  width: 94px;
+  word-wrap: break-word;
+}
+.productTableHead .frequency > select{
+  flex: 1 0 0;
+  text-align: center;
+  width: 72px;
+  word-wrap: break-word;
+}
+.productTableHead .prefix{
+  flex: 1 0 0;
+  text-align: center;
+  width: 61px;
+  word-wrap: break-word;
+}
+.productTableHead .typeOfEducation{
+  flex: 1 0 0;
+  text-align: center;
+  width: 143px;
+  word-wrap: break-word;
+}
+.productTableHead .verified{
+  flex: 1 0 0;
+  text-align: center;
+  width: 78px;
+  word-wrap: break-word;
+}
+.productTableInner .degreeId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 80px;
+  word-wrap: break-word;
+}
+.productTableInner .degreeName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 180px;
+  word-wrap: break-word;
+}
+.productTableInner .abbrevation{
+  flex: 1 0 0;
+  text-align: center;
+  width: 105px;
+  word-wrap: break-word;
+}
+.productTableInner .specialization > select{
+  flex: 1 0 0;
+  text-align: center;
+  width: 114px;
+  word-wrap: break-word;  
+}
+.productTableInner .specialization{
+  flex: 1 0 0;
+  text-align: center;
+  width: 125px;
+  word-wrap: break-word;
+}
+.productTableInner .specilityType{
+  flex: 1 0 0;
+  text-align: center;
+  width: 116px;
+  word-wrap: break-word;
+}
+.productTableInner .level{
+  flex: 1 0 0;
+  text-align: center;
+  width: 60px;
+  word-wrap: break-word;
+}
+.productTableInner .frequency{
+  flex: 1 0 0;
+  text-align: center;
+  width: 96px;
+  word-wrap: break-word;
+}
+.productTableInner .frequency > select{
+  flex: 1 0 0;
+  text-align: center;
+  width: 72px;
+  word-wrap: break-word;
+}
+.productTableInner .prefix{
+  flex: 1 0 0;
+  text-align: center;
+  width: 60px;
+  word-wrap: break-word;
+}
+.productTableInner .typeOfEducation{
+  flex: 1 0 0;
+  text-align: center;
+  width: 142px;
+  word-wrap: break-word;
+}
+.productTableInner .verified{
+  flex: 1 0 0;
+  text-align: center;
+  width: 72px;
+  word-wrap: break-word;
+}
+.productTableHead .specializationId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 125px;
+  word-wrap: break-word;
+}
+.productTableHead .specializationName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 350px;
+  word-wrap: break-word;
+}
+.productTableHead .specializationFrequency{
+  flex: 1 0 0;
+  text-align: center;
+  width: 190px;
+  word-wrap: break-word;
+}
+.productTableHead .specializationLinked{
+  flex: 1 0 0;
+  text-align: center;
+  width: 374px;
+  word-wrap: break-word;
+}
+.productTableInner .specializationId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 125px;
+  word-wrap: break-word;
+}
+.productTableInner .specializationName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 350px;
+  word-wrap: break-word;
+}
+.productTableInner .specializationFrequency{
+  flex: 1 0 0;
+  text-align: center;
+  width: 190px;
+  word-wrap: break-word;
+}
+.productTableInner .specializationLinked{
+  flex: 1 0 0;
+  text-align: center;
+  width: 359px;
+  word-wrap: break-word;
+}
+.productTableHead .specialityId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 97px;
+  word-wrap: break-word;
+}
+.productTableHead .specialityName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 280px;
+  word-wrap: break-word;
+}
+.productTableHead .specialityLayman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 676px;
+  word-wrap: break-word;
+}
+.productTableInner .specialityId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 97px;
+  word-wrap: break-word;
+}
+.productTableInner .specialityName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 280px;
+  word-wrap: break-word;
+}
+.productTableInner .specialityLayman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 660px;
+  word-wrap: break-word;
+}
+.productTableHead .collegeId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 80px;
+  word-wrap: break-word;
+}
+.productTableHead .collegeName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 416px;
+  word-wrap: break-word;
+}
+.productTableHead .educationStream{
+  flex: 1 0 0;
+  text-align: center;
+  width: 456px;
+  word-wrap: break-word;
+}
+.productTableInner .collegeId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 80px;
+  word-wrap: break-word;
+}
+.productTableInner .collegeName{
+  flex: 1 0 0;
+  text-align: left;
+  width: 416px;
+  word-wrap: break-word;
+}
+.productTableInner .educationStream{
+  flex: 1 0 0;
+  text-align: left;
+  width: 456px;
+  word-wrap: break-word;
+}
+.productTableHead .nonmedicalId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 360px;
+  word-wrap: break-word;
+}
+.productTableHead .nonmedicalName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 679px;
+  word-wrap: break-word;
+}
+.productTableInner .nonmedicalId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 360px;
+  word-wrap: break-word;
+}
+.productTableInner .nonmedicalName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 679px;
+  word-wrap: break-word;
+}
+.productTableHead .testId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 80px;
+  word-wrap: break-word;
+}
+.productTableHead .testName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 185px;
+  word-wrap: break-word;
+}
+.productTableHead .subcatId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 138px;
+  word-wrap: break-word;
+}
+.productTableHead .subcatName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 216px;
+  word-wrap: break-word;
+}
+.productTableHead .catId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 113px;
+  word-wrap: break-word;
+}
+.productTableHead .catName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 234px;
+  word-wrap: break-word;
+}
+.productTableInner .testId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 82px;
+  word-wrap: break-word;
+}
+.productTableInner .testName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 166px;
+  word-wrap: break-word;
+}
+.productTableInner .subcatId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 140px;
+  word-wrap: break-word;
+}
+.productTableInner .subcatName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 220px;
+  word-wrap: break-word;
+}
+.productTableInner .catId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 115px;
+  word-wrap: break-word;
+}
+.productTableInner .catName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 237px;
+  word-wrap: break-word;
+}
+.productTableHead .categoryId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 92px;
+  word-wrap: break-word;
+}
+.productTableHead .categoryName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 185px;
+  word-wrap: break-word;
+}
+.productTableHead .facilityId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 138px;
+  word-wrap: break-word;
+}
+.productTableHead .facilityName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 216px;
+  word-wrap: break-word;
+}
+.productTableHead .equipmentId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 113px;
+  word-wrap: break-word;
+}
+.productTableHead .equipmentName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 234px;
+  word-wrap: break-word;
+}
+.productTableInner .categoryId{
+  flex: 1 0 0;
+  text-align: left;
+  width: 93px;
+  word-wrap: break-word;
+}
+.productTableInner .categoryName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 187px;
+  word-wrap: break-word;
+}
+.productTableInner .facilityId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 147px;
+  word-wrap: break-word;
+}
+.productTableInner .facilityName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 220px;
+  word-wrap: break-word;
+}
+.productTableInner .equipmentId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 117px;
+  word-wrap: break-word;
+}
+.productTableInner .equipmentName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 237px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 70px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryName{
+  flex: 1 0 0;
+  text-align: center;
+  width: 164px;
+  word-wrap: break-word;
+}
+.productTableHead .ICD{
+  flex: 1 0 0;
+  text-align: center;
+  width: 70px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryLevel1{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryLevel2{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryLevel3{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryLayman1{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryLayman2{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .surgeryFrequency{
+  flex: 1 0 0;
+  text-align: center;
+  width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .speciality{
+  flex: 1 0 0;
+  text-align: center;
+  width: 120px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryId{
+  flex: 1 0 0;
+  text-align: center;
+  width: 70px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryName{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 164px;
+  min-width: 164px;
+  word-wrap: break-word;
+}
+.productTableInner .ICD{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 70px;
+  min-width: 70px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryLevel1{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryLevel2{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryLevel3{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryLayman1{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryLayman2{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryFrequency{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .speciality{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 120px;
+  min-width: 120px;
+  word-wrap: break-word;
+}
+
+.productTableInner .surgeryLayman2{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableInner .surgeryFrequency{
+  flex: 1 0 0;
+  text-align: center;
+  max-width: 100px;
+  min-width: 100px;
+  word-wrap: break-word;
+}
+.productTableHead .level1Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableHead .level1Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableHead .level1Layman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableHead .level2Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableHead .level2Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableHead .level2Layman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableHead .level3Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableHead .level3Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableInner .level1Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableInner .level1Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableInner .level1Layman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableInner .level2Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableInner .level2Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableInner .level2Layman{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}
+.productTableInner .level3Id{
+  flex: 1 0 0;
+  text-align: center;
+  width: 77px;
+  word-wrap: break-word;
+}
+.productTableInner .level3Name{
+  flex: 1 0 0;
+  text-align: center;
+  width: 160px;
+  word-wrap: break-word;
+}

@@ -1,0 +1,26 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/nonmedical/createEditAssignDelete.html'"></div>
+    <div ng-if = "nonmedicalCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="nonmedicalId">Index Number</th>
+            <th class="nonmedicalName">Name</th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in nonmedicalCtrl.details">
+            <td class="nonmedicalId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "nonmedicalCtrl.checked" ng-click="nonmedicalCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="nonmedicalName">{{detail.name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

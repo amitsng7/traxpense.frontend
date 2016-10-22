@@ -1,0 +1,17 @@
+<div class="assignProductModal" ng-show="diagnosticCtrl.assignValue" ng-click="diagnosticCtrl.closeProductOperation($event, 'assignProductModal')">
+  <div class="assignProductModalContent">
+    <div class="assignProductModalContentHeader">Assign Diagnostic Test</div>
+    <table>
+      <tr>
+        <td class="assignProductModalContentLabel">Name</td>
+        <td class="assignProductModalContentInput">
+          <input type="text" placeholder="Search by Diagnostic Test" ng-model="diagnosticCtrl.nonmedicalName"  uib-typeahead="detail as detail.name for detail in diagnosticCtrl.details | filter:$viewValue | limitTo: 10 | unique:'name'" typeahead-editable="false"/>
+        </td>
+      </tr>
+    </table>
+    <div class="assignProductModalContentFooter">
+      <button class="assignProductModalContentFooterSave" ng-click="diagnosticCtrl.assignSave(diagnosticCtrl.nonmedicalName)">Save</button>
+      <button class="assignProductModalContentFooterCancel" ng-click="diagnosticCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

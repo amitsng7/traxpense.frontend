@@ -1,0 +1,17 @@
+<div class="createNewProductModal" ng-show="roomCtrl.createValue" ng-click="roomCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="createNewProductModalContentHeader">Create New Room Amenity</div>
+    <table>
+      <tr>
+        <td class="createNewProductModalContentLabel">Name</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "roomCtrl.roomName"></input>
+        </td>
+      </tr>
+    </table>
+    <div class="createNewProductModalContentFooter">
+      <button class="createNewProductModalContentFooterSave" ng-click="roomCtrl.save(roomCtrl.roomName)">Save</button>
+      <button class="createNewProductModalContentFooterCancel" ng-click="roomCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

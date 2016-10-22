@@ -1,0 +1,28 @@
+<title>Appointmwnt Panel</title>
+<header class="box header-top">
+  <div class="navi">
+    <div href="#" class="nav-toggle-btn" ng-click="headerCtrl.navigationBar()">&#9776;</div>
+    <ul>
+      <li><span class="arrow-back glyphicon glyphicon-arrow-left" ng-click="headerCtrl.navigationBar()"></span></li>
+      <li><div class="userlogin">{{headerCtrl.username | uppercase}}</div></li>
+      <li><div class="booker">Appointment booker</div></li>
+      <li role="presentation" ng-click = "headerCtrl.navigationBar()"><a ui-sref="appointmentpanel.pending">Pending</a></li>
+      <!-- Previously below tab was named as complete, so all the controller, service, model name will remain same i.e "complete", the only change is in navigation tab -->
+      <li role="presentation" ng-click = "headerCtrl.navigationBar()"><a ui-sref="appointmentpanel.complete">Processed</a></li>
+      <li role="presentation" ng-click = "headerCtrl.navigationBar()"><a ui-sref="appointmentpanel.history">History</a></li>
+      <li><a ui-sref="login" ng-click="headerCtrl.navigationBar(); headerCtrl.logout()">Log out</a></li>
+    </ul>
+  </div>
+  <div class="panel-logo"><img ng-src="footer_logo.png" alt="Description"/></div>
+  <div class="panel-name">Appointment Booking Panel</div>
+  <div class="noti"><button ng-click="headerCtrl.stop_Notification(); headerCtrl.cancelAndReload();" class="notification"><i class="fa fa-bell"></i><span ng-if="headerCtrl.notification > 0" class="noti_bubble" ng-bind="headerCtrl.notification"></span></button></div>
+  <div ng-show="headerCtrl.showDropDown" class="notificationDropdown" ng-click = "headerCtrl.hideDropDown()">
+    <div class="notificationDropdownList" ng-click="headerCtrl.showPendingNotification()">
+      <div>Pending Appointments: {{headerCtrl.pendingNotification}}</div>
+    </div>
+    <div class="notificationDropdownList"ng-click="headerCtrl.showCompleteNotification()">
+      <div>Cancelled Appointments: {{headerCtrl.completeNotification}}</div>
+    </div>
+  </div>
+  <div class="logout"><button ui-sref="login" ng-click="headerCtrl.logout()" class="login">Log out</button></div>
+</header>

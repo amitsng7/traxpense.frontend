@@ -1,0 +1,29 @@
+<div class="editProductModal" ng-show="collegeCtrl.editValue" ng-click="collegeCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="editProductModalContentHeader">Edit College</div>
+    <table>
+      <tr>
+        <td class="editProductModalContentLabel">College Name</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="collegeCtrl.collegeName"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Education Stream</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="collegeCtrl.education_stream">                               
+            <option ng-repeat="education_stream in collegeCtrl.education_stream_data | unique: 'name'" 
+                  value="{{education_stream.name}}" 
+                  ng-selected="{{education_stream.name == collegeCtrl.education_stream}}">
+                  {{education_stream.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div class="editProductModalContentFooter">
+      <button class="editProductModalContentFooterSave" ng-click="collegeCtrl.approve(collegeCtrl.collegeName, collegeCtrl.education_stream)">Approve</button>
+      <button class="editProductModalContentFooterCancel" ng-click="collegeCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

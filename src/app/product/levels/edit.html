@@ -1,0 +1,102 @@
+<div class="editProductModal" ng-show="levelCtrl.editValue" ng-click="levelCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="box">
+      <div class="editProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(1)" ng-class="{active:levelCtrl.isSelected(1)}">Edit Level 1</button>
+      </div>
+      <div class="editProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(2)" ng-class="{active:levelCtrl.isSelected(2)}">Edit Level 2</button>
+      </div>
+      <div class="editProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(3)" ng-class="{active:levelCtrl.isSelected(3)}">Edit Level 3</button>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(1)">
+      <table ng-if="levelCtrl.level1Name != null">
+        <tr>
+          <td class="editProductModalContentLabel">Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level1Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Layman Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level1Layman"></input>
+          </td>
+        </tr>
+      </table>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level1Name != null">
+        <button class="editProductModalContentFooterSave" ng-click="levelCtrl.approveLevel1(levelCtrl.level1Name, levelCtrl.level1Layman)">Approve</button>
+        <button class="editProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level1Name == null">
+        <div class="editProductModalContentLabel">Nothing to Edit..!!</div>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(2)">
+      <table ng-if="levelCtrl.level2Name != null">
+        <tr>
+          <td class="editProductModalContentLabel">Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level2Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Layman Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level2Layman"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Level 1 Name</td>
+          <td class="editProductModalContentInput">
+            <select ng-model="levelCtrl.lastLevel1Name">                               
+              <option ng-repeat="detail in levelCtrl.level1 | unique: 'name'" 
+                      value="{{detail.name}}" 
+                      ng-selected="{{detail.name == levelCtrl.lastLevel1Name}}">
+                      {{detail.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level2Name != null">
+        <button class="editProductModalContentFooterSave" ng-click="levelCtrl.approveLevel2(levelCtrl.level2Name, levelCtrl.level2Layman, levelCtrl.lastLevel1Name)">Approve</button>
+        <button class="editProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level2Name == null">
+        <div class="editProductModalContentLabel">Nothing to Edit..!!</div>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(3)">
+      <table ng-if="levelCtrl.level3Name != null">
+        <tr>
+          <td class="editProductModalContentLabel">Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level3Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Level 2 Name</td>
+          <td class="editProductModalContentInput">
+            <select ng-model="levelCtrl.lastLevel2Name">                               
+              <option ng-repeat="detail in levelCtrl.details | unique: 'name'" 
+                      value="{{detail.name}}" 
+                      ng-selected="{{detail.name == levelCtrl.lastLevel2Name}}">
+                      {{detail.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level3Name != null">
+        <button class="editProductModalContentFooterSave" ng-click="levelCtrl.approveLevel3(levelCtrl.level3Name, levelCtrl.lastLevel2Name)">Approve</button>
+        <button class="editProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+      <div class="editNewProductModalContentFooter" ng-if="levelCtrl.level3Name == null">
+        <div class="editProductModalContentLabel">Nothing to Edit..!!</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class=" box testing">
+  <div class="createNewProduct">
+    <button class="createNewProductButton" ng-click="medicalCtrl.showProductOperation('create')"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create New Medical Facility</button>
+  </div>
+  <div>
+    <i ng-click="medicalCtrl.cancel()" class="fa fa-repeat resetProduct" aria-hidden="true"></i>
+  </div>
+  <div class="operationOnProduct" ng-mouseover = "message = 'Please select one ID'" ng-mouseout= "message = ''">
+    <div class="editProduct">
+      <a class={{medicalCtrl.operationClass}} ng-click="medicalCtrl.showProductOperation('edit'); medicalCtrl.editProduct()">Edit</a>
+    </div>
+    <div ng-if="medicalCtrl.checked == false" class="notActiveMessage" ng-show="message != ''">{{message}}</div>
+    <div class="assignProduct">
+      <a class={{medicalCtrl.operationClass}} ng-click="medicalCtrl.showProductOperation('assign')">Assign</a>
+    </div>
+    <div class="deleteProduct">
+      <a class={{medicalCtrl.operationClass}} ng-click="medicalCtrl.showProductOperation('delete'); medicalCtrl.deleteProduct()">Delete</a>
+    </div>
+  </div>
+</div>
+<div ng-include src="'app/product/medical/create.html'"></div>
+<div ng-include src="'app/product/medical/edit.html'"></div>
+<div ng-include src="'app/product/medical/assign.html'"></div>
+<div ng-include src="'app/product/medical/delete.html'"></div>
+

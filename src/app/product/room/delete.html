@@ -1,0 +1,22 @@
+<div class="deleteProductModal" ng-show="roomCtrl.deleteValue" ng-click="roomCtrl.closeProductOperation($event, 'deleteProductModal')">
+  <div class="assignProductModalContent">
+    <div class="deleteProductModalContentHeader">Delete Room Amenity</div>
+    <div class="deleteProductModalContentLabel" ng-if="roomCtrl.deleteRoomAmenitiesData.rooms.length == 0">No room is associated with this room amenity</div>
+    <div>
+      <span class="deleteProductModalContentLabel" ng-if="roomCtrl.deleteRoomAmenitiesData.rooms.length > 0">Following rooms are linked to this room amenity:</span>
+      <div>
+        <table ng-repeat="room in roomCtrl.deleteRoomAmenitiesData.rooms">
+          <tr>
+            <td class="deleteProductModalContentID">{{room.id}}</td>
+            <td class="deleteProductModalContentDoctor">{{room.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="deleteProductModalContentFooter">
+      <button ng-if="roomCtrl.deleteRoomAmenitiesData.rooms.length == 0" class="deleteProductModalContentFooterDelete" ng-click="roomCtrl.deleteSave(roomCtrl.deleteDegree)">Delete</button>
+      <button ng-if="roomCtrl.deleteRoomAmenitiesData.rooms.length > 0" class="deleteProductModalContentFooterCannotDelete">Cannot be deleted</button>
+      <button class="deleteProductModalContentFooterCancel" ng-click="roomCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,71 @@
+
+<div class="createNewProductModal" ng-show="surgeryCtrl.createValue" ng-click="surgeryCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="createNewProductModalContentHeader">Create New Surgery</div>
+    <table>
+      <tr>
+        <td class="createNewProductModalContentLabel">Surgery/Procedure Name</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "surgeryCtrl.surgeryName"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">ICD Code</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "surgeryCtrl.icdCode"></input>
+        </td>
+      </tr>
+      <tr ng-if="surgeryCtrl.level2Name != null">
+        <td class="createNewProductModalContentLabel">Level 1 Name</td>
+        <td class="createNewProductModalContentInput">
+          <input ng-model="surgeryCtrl.level2Name.parent.name" readonly style="cursor: not-allowed;"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">Level 2 Name</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="surgeryCtrl.level2Name" ng-change="surgeryCtrl.getLevel3List(surgeryCtrl.level2Name)" ng-options="detail.name for detail in surgeryCtrl.level2List | unique:'name'"></select>
+        </td>
+      </tr>
+      <tr ng-if="surgeryCtrl.level2Name != null">
+        <td class="createNewProductModalContentLabel">Level 3 Name</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="surgeryCtrl.level3Name" ng-options="detail.name for detail in surgeryCtrl.level2Name.children | unique:'name'"></select>
+        </td>
+      </tr>
+      <tr ng-if="surgeryCtrl.level2Name != null">
+        <td class="createNewProductModalContentLabel">Level 1 Layman Term</td>
+        <td class="createNewProductModalContentInput">
+          <input ng-model="surgeryCtrl.level2Name.parent.layman_name" readonly style="cursor: not-allowed;"></input> 
+        </td>
+      </tr>
+      <tr ng-if="surgeryCtrl.level2Name != null">
+        <td class="createNewProductModalContentLabel">Level 2 Layman Term</td>
+        <td class="createNewProductModalContentInput">
+          <input ng-model="surgeryCtrl.level2Name.layman_name" readonly style="cursor: not-allowed;"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">Frequency</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="surgeryCtrl.frequency" ng-options="detail.frequency for detail in surgeryCtrl.details | unique:'frequency'"></select>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">Speciality Linked</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="surgeryCtrl.specialityLinked">                               
+            <option ng-repeat="speciality in surgeryCtrl.specialityList | unique: 'name'" 
+                    value="{{speciality.name}}">
+                    {{speciality.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div class="createNewProductModalContentFooter">
+      <button class="createNewProductModalContentFooterSave" ng-click="surgeryCtrl.save(surgeryCtrl.surgeryName, surgeryCtrl.icdCode, surgeryCtrl.level2Name, surgeryCtrl.level3Name, surgeryCtrl.frequency, surgeryCtrl.specialityLinked)">Save</button>
+      <button class="createNewProductModalContentFooterCancel" ng-click="surgeryCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

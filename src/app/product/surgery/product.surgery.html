@@ -1,0 +1,68 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/surgery/createEditAssignDelete.html'"></div>
+    <div ng-if = "surgeryCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="surgeryId">ID</th>
+            <th class="surgeryName">Name</th>
+            <th class="ICD">ICD<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryLevel1">Level Name 1<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryLevel2">Level Name 2<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryLevel3">Level Name 3<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryLayman1">Level 1 Layman Name<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryLayman2">Level 2 Layman Name<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="surgeryFrequency">Frequency<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="speciality">Speciality Linked<i class="fa fa-filter" aria-hidden="true"></i></th>
+          </tr>
+          <tr>
+            <th class="surgeryId"></th>
+            <th class="surgeryName"></th>
+            <th class="ICD"></th>
+            <th class="surgeryLevel1">
+              <select style="width: 90px;" ng-model="selectedSurgeryLevel1" ng-options="detail.surgery_levels[0].level1.name for detail in surgeryCtrl.details | unique:'surgery_levels[0].level1.name' | orderBy:'surgery_levels[0].level1.name'"</select><option value=""></option></i>
+            </th>
+            <th class="surgeryLevel2">
+              <select style="width: 90px;" ng-model="selectedSurgeryLevel2" ng-options="detail.surgery_levels[1].level2.name for detail in surgeryCtrl.details | unique:'surgery_levels[1].level2.name' | orderBy:'surgery_levels[1].level2.name'"</select><option value=""></option></i>
+            </th>
+            <th class="surgeryLevel3">
+              <select style="width: 90px;" ng-model="selectedSurgeryLevel3" ng-options="detail.surgery_levels[2].level3.name for detail in surgeryCtrl.details | unique:'surgery_levels[2].level3.name' | orderBy:'surgery_levels[2].level3.name'"</select><option value=""></option></i>             
+            </th>
+            <th class="surgeryLayman1">
+              <select style="width: 90px;" ng-model="selectedSurgeryLayman1" ng-options="detail.surgery_levels[0].level1.layman_name for detail in surgeryCtrl.details | unique:'surgery_levels[0].level1.layman_name' | orderBy:'surgery_levels[0].level1.layman_name'"</select><option value=""></option></i>
+            </th>
+            <th class="surgeryLayman2">
+              <select style="width: 90px;" ng-model="selectedSurgeryLayman2" ng-options="detail.surgery_levels[1].level2.layman_name for detail in surgeryCtrl.details | unique:'surgery_levels[1].level2.layman_name' | orderBy:'surgery_levels[1].level2.layman_name'"</select><option value=""></option></i>
+            </th>
+            <th class="surgeryFrequency">
+              <select style="width:90px;" ng-model="selectedFrequency" ng-options="detail.frequency for detail in surgeryCtrl.details | unique:'frequency' | orderBy:'frequency'"</select><option value=""></option></i>
+            </th>
+            <th class="speciality">
+              <select style="width: 90px;" ng-model="selectedSpeciality" ng-options="detail.speciality for detail in surgeryCtrl.details | unique:'speciality' | orderBy:'speciality'"</select><option value=""></option></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in surgeryCtrl.details | filter:surgeryCtrl.customFilter(selectedSurgeryLayman1, 'surgeryLayman1', detail) | filter:surgeryCtrl.customFilter(selectedSurgeryLayman2, 'surgeryLayman2', detail) | filter:surgeryCtrl.customFilter(selectedSurgeryLevel1, 'surgeryLevel1', detail) | filter:surgeryCtrl.customFilter(selectedSurgeryLevel2, 'surgeryLevel2', detail)| filter:surgeryCtrl.customFilter(selectedSurgeryLevel3, 'surgeryLevel3', detail) | filter:{frequency: selectedFrequency.frequency, speciality:selectedSpeciality.speciality} : true">
+            <td class="surgeryId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "surgeryCtrl.checked" ng-click="surgeryCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="surgeryName">{{detail.name}}</td>
+            <td class="ICD">{{detail.icd}}</td>
+            <td class="surgeryLevel1">{{detail.surgery_levels[0].level1.name}}</td>
+            <td class="surgeryLevel2">{{detail.surgery_levels[1].level2.name}}</td>
+            <td class="surgeryLevel3">{{detail.surgery_levels[2].level3.name}}</td>
+            <td class="surgeryLayman1">{{detail.surgery_levels[0].level1.layman_name}}</td>
+            <td class="surgeryLayman2">{{detail.surgery_levels[1].level2.layman_name}}</td>       
+            <td class="surgeryFrequency">{{detail.frequency}}</td>
+            <td class="speciality">{{detail.speciality}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

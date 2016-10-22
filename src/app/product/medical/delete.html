@@ -1,0 +1,22 @@
+<div class="deleteProductModal" ng-show="medicalCtrl.deleteValue" ng-click="medicalCtrl.closeProductOperation($event, 'deleteProductModal')">
+  <div class="assignProductModalContent">
+    <div class="deleteProductModalContentHeader">Delete non-medical facility</div>
+    <div class="deleteProductModalContentLabel" ng-if="medicalCtrl.deleteNonMedicalData.businesses.length == 0">No business is associated to this non-medical facility</div>
+    <div>
+      <span class="deleteProductModalContentLabel" ng-if="medicalCtrl.deleteNonMedicalData.businesses.length > 0">Following businesses are linked to this non-medical facility:</span>
+      <div>
+        <table ng-repeat="doctor in medicalCtrl.deleteNonMedicalData.businesses">
+          <tr>
+            <td class="deleteProductModalContentID">{{doctor.id}}</td>
+            <td class="deleteProductModalContentDoctor">{{doctor.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="deleteProductModalContentFooter">
+      <button ng-if="medicalCtrl.deleteNonMedicalData.businesses.length == 0" class="deleteProductModalContentFooterDelete" ng-click="medicalCtrl.deleteSave(medicalCtrl.deleteDegree)">Delete</button>
+      <button ng-if="medicalCtrl.deleteNonMedicalData.businesses.length > 0" class="deleteProductModalContentFooterCannotDelete">Cannot be deleted</button>
+      <button class="deleteProductModalContentFooterCancel" ng-click="medicalCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

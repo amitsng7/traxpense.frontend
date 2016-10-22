@@ -1,0 +1,22 @@
+<div class="deleteProductModal" ng-show="collegeCtrl.deleteValue" ng-click="collegeCtrl.closeProductOperation($event, 'deleteProductModal')">
+  <div class="assignProductModalContent">
+    <div class="deleteProductModalContentHeader">Delete College</div>
+    <div class="deleteProductModalContentLabel" ng-if="collegeCtrl.deleteCollegeData.doctors.length == 0">No Doctor is linked to this College</div>
+    <div>
+      <span class="deleteProductModalContentLabel" ng-if="collegeCtrl.deleteCollegeData.doctors.length > 0">The following Doctors are linked to this College:</span>
+      <div>
+        <table ng-repeat="doctor in collegeCtrl.deleteCollegeData.doctors">
+          <tr>
+            <td class="deleteProductModalContentID">{{doctor.id}}</td>
+            <td class="deleteProductModalContentDoctor">{{doctor.name}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="deleteProductModalContentFooter">
+      <button ng-if="collegeCtrl.deleteCollegeData.doctors.length == 0" class="deleteProductModalContentFooterDelete" ng-click="collegeCtrl.deleteSave(collegeCtrl.deleteDegree)">Delete</button>
+      <button ng-if="collegeCtrl.deleteCollegeData.doctors.length > 0" class="deleteProductModalContentFooterCannotDelete">Cannot be deleted</button>
+      <button class="deleteProductModalContentFooterCancel" ng-click="collegeCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

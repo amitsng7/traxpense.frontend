@@ -1,0 +1,44 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/specialization/createEditAssignDelete.html'"></div>
+    <div ng-if = "specializationCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="specializationId">Specialization ID</th>
+            <th class="specializationName">Specialization Name</th>
+            <th class="specializationFrequency">Frequency<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="specializationLinked">Speciality Linked<i class="fa fa-filter" aria-hidden="true"></i></th>
+          </tr>
+          <tr>
+            <th class="specializationId"></th>
+            <th class="specializationName"></th>
+            <th class="specializationFrequency">
+              <select ng-model="selectedFrequency" style="width:80px" ng-options="detail.frequency for detail in specializationCtrl.details | unique:'frequency' | orderBy:'frequency':true | filter:{frequency: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="specializationLinked">
+              <select ng-model="selectedSpeciality" style="width:200px" ng-options="detail.hospital_speciality_id for detail in specializationCtrl.details | unique:'hospital_speciality_id' | orderBy:'-hospital_speciality_id':true | filter:{hospital_speciality_id: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in specializationCtrl.details | filter:{frequency: selectedFrequency.frequency, hospital_speciality_id: selectedSpeciality.hospital_speciality_id} : true">
+            <td class="specializationId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "specializationCtrl.checked" ng-click="specializationCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="specializationName">{{detail.name}}</td>
+            <td class="specializationFrequency">{{detail.frequency}}</td>
+            <td class="specializationLinked">{{detail.hospital_speciality_id}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

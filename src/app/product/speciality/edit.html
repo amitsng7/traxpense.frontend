@@ -1,0 +1,38 @@
+<div class="editProductModal" ng-show="specialityCtrl.editValue" ng-click="specialityCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="editProductModalContentHeader">Edit Speciality</div>
+    <table>
+      <tr>
+        <td class="editProductModalContentLabel">Speciality Name</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="specialityCtrl.specialityName"></input>
+        </td>
+      </tr>
+      <!-- <tr><td class="editProductModalContentLabel">Frequency</td><td class="editProductModalContentInput"><input type="text" ng-model="specialityCtrl.degreeAbbreviation"></input></td></tr>
+      <tr><td class="editProductModalContentLabel">Speciality Type</td><td class="editProductModalContentInput"><select ng-model="specialityCtrl.speciality_name" ng-options="detail.speciality_id for detail in specialityCtrl.details track by detail.id | unique:'speciality_id'"></select></td></tr> -->
+
+      <tr ng-repeat="laymanName in specialityCtrl.laymanNames" ng-hide="laymanName._destroy">
+        <td class="editProductModalContentLabel">Speciality Layman Names</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="laymanName.name"></input>
+        </td>
+        <td>
+          <i class="fa fa-times-circle deleteField" ng-click="specialityCtrl.deleteField($index)" aria-hidden="true"></i>
+        </td>
+      </tr>
+      <tr ng-repeat="laymanName in specialityCtrl.createLaymanNames">
+        <td class="createNewProductModalContentLabel">Add Layman Names</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model="laymanName.name"></input>
+        </td>
+        <td>
+          <i class="fa fa-plus-circle addMoreField" ng-click="specialityCtrl.addNewField()" aria-hidden="true"></i>
+        </td>
+      </tr>
+    </table>
+    <div class="editProductModalContentFooter">
+      <button class="editProductModalContentFooterSave" ng-click="specialityCtrl.approve(specialityCtrl.specialityName, specialityCtrl.laymanNames, specialityCtrl.createLaymanNames)">Approve</button>
+      <button class="editProductModalContentFooterCancel" ng-click="specialityCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

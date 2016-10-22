@@ -1,0 +1,93 @@
+<div class="createNewProductModal" ng-show="medicalCtrl.createValue" ng-click="medicalCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="box">
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalTabOne" ng-click="medicalCtrl.selectTab(1)" ng-class="{active:medicalCtrl.isSelected(1)}">New Category</button>
+      </div>
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalTabTwo" ng-click="medicalCtrl.selectTab(2)" ng-class="{active:medicalCtrl.isSelected(2)}">New Sub-category</button>
+      </div>
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalTabThree" ng-click="medicalCtrl.selectTab(3)" ng-class="{active:medicalCtrl.isSelected(3)}">New Equipment</button>
+      </div>
+    </div>
+    <div class="box" ng-show="medicalCtrl.isSelected(1)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Category Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "medicalCtrl.categoryName"></input>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="medicalCtrl.saveCategory(medicalCtrl.categoryName)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="medicalCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+    <div class="box" ng-show="medicalCtrl.isSelected(2)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Facility Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "medicalCtrl.facilityName"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Category Name</td>
+          <td class="createNewProductModalContentInput">
+            <select ng-model="medicalCtrl.categoryName">                               
+              <option ng-repeat="medical_cats in medicalCtrl.medical_cats | unique: 'name'" 
+                      value="{{medical_cats.name}}" 
+                      ng-selected="{{medical_cats.name == medicalCtrl.medical_cats}}">
+                      {{medical_cats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="medicalCtrl.saveSubcategory(medicalCtrl.facilityName, medicalCtrl.categoryName)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="medicalCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+    <div class="box" ng-show="medicalCtrl.isSelected(3)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Equipment Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "medicalCtrl.equipmentName"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Facility Name</td>
+          <td class="createNewProductModalContentInput">
+            <select ng-model="medicalCtrl.subcategoryName">                               
+              <option ng-repeat="medical_subcats in medicalCtrl.medical_subcats | unique: 'name'" 
+                      value="{{medical_subcats.name}}" 
+                      ng-selected="{{medical_subcats.name == medicalCtrl.medical_subcats}}">
+                      {{medical_subcats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Category Name</td>
+          <td class="createNewProductModalContentInput">
+            <select ng-model="medicalCtrl.categoryName">                               
+              <option ng-repeat="medical_cats in medicalCtrl.medical_cats | unique: 'name'" 
+                      value="{{medical_cats.name}}" 
+                      ng-selected="{{medical_cats.name == medicalCtrl.medical_cats}}">
+                      {{medical_cats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="medicalCtrl.saveEquipment(medicalCtrl.equipmentName, medicalCtrl.subcategoryName, medicalCtrl.categoryName)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="medicalCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

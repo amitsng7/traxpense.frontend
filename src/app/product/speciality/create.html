@@ -1,0 +1,26 @@
+<div class="createNewProductModal" ng-show="specialityCtrl.createValue" ng-click="specialityCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="createNewProductModalContentHeader">Create New Speciality</div>
+    <table>
+      <tr>
+        <td class="createNewProductModalContentLabel">Speciality Name</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "specialityCtrl.specialityName"></input>
+        </td>
+      </tr>
+      <tr ng-repeat="laymanName in specialityCtrl.createLaymanNames">
+        <td class="createNewProductModalContentLabel">Speciality Layman Names{{' '+ ($index + 1)}}</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model="laymanName.name"></input>
+        </td>
+        <td>
+          <i class="fa fa-plus-circle addMoreField" ng-click="specialityCtrl.addNewField()" aria-hidden="true"></i>
+        </td>
+      </tr>
+    </table>
+    <div class="createNewProductModalContentFooter">
+      <button class="createNewProductModalContentFooterSave" ng-click="specialityCtrl.save(specialityCtrl.specialityName, specialityCtrl.createLaymanNames)">Save</button>
+      <button class="createNewProductModalContentFooterCancel" ng-click="specialityCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

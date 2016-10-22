@@ -1,0 +1,28 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/speciality/createEditAssignDelete.html'"></div>
+    <div ng-if = "specialityCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="specialityId">Speciality ID</th>
+            <th class="specialityName">Speciality Name</th>
+            <th class="specialityLayman">Speciality Layman Names</th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in specialityCtrl.details | filter:{specialization_id: selectedSpecialization.specialization_id, level: selectedLevel.level, verified: selectedVerified.verified} : true">
+            <td class="specialityId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "specialityCtrl.checked" ng-click="specialityCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="specialityName">{{detail.name}}</td>
+            <td class="specialityLayman">{{detail.layman_terms}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

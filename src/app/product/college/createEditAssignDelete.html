@@ -1,0 +1,26 @@
+
+<div class=" box testing">
+  <div class="createNewProduct">
+    <button class="createNewProductButton" ng-click="collegeCtrl.showProductOperation('create')"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create New college Degree</button>
+  </div>
+  <div>
+    <i ng-click="collegeCtrl.cancel()" class="fa fa-repeat resetProduct" aria-hidden="true"></i>
+  </div>
+  <div class="operationOnProduct" ng-mouseover = "message = 'Please select one ID'" ng-mouseout= "message = ''">
+    <div class="editProduct">
+      <a class={{collegeCtrl.operationClass}} ng-click="collegeCtrl.showProductOperation('edit'); collegeCtrl.editProduct()">Edit</a>
+    </div>
+    <div ng-if="collegeCtrl.checked == false" class="notActiveMessage" ng-show="message != ''">{{message}}</div>
+    <div class="assignProduct">
+      <a class={{collegeCtrl.operationClass}} ng-click="collegeCtrl.showProductOperation('assign')">Assign</a>
+    </div>
+    <div class="deleteProduct">
+      <a class={{collegeCtrl.operationClass}} ng-click="collegeCtrl.showProductOperation('delete'); collegeCtrl.deleteProduct()">Delete</a>
+    </div>
+  </div>
+</div>
+<div ng-include src="'app/product/college/create.html'"></div>
+<div ng-include src="'app/product/college/edit.html'"></div>
+<div ng-include src="'app/product/college/assign.html'"></div>
+<!-- <div ng-include src="'app/product/college/delete.html'"></div> -->
+

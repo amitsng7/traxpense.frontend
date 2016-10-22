@@ -1,0 +1,82 @@
+<div class="editProductModal" ng-show="diagnosticCtrl.editValue" ng-click="diagnosticCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="box">
+      <div class="editProductModalContentHeader">
+        <button type="button" class="editNewProductModalContentTabOne" ng-click="diagnosticCtrl.selectTab(1)" ng-class="{active:diagnosticCtrl.isSelected(1)}">Edit New Diagnostic Test</button>
+      </div>
+      <div class="editProductModalContentHeader">
+        <button type="button" class="editNewProductModalContentTabTwo" ng-click="diagnosticCtrl.selectTab(2)" ng-class="{active:diagnosticCtrl.isSelected(2)}">Edit New Sub-category</button>
+      </div>
+    </div>
+    <div class="box" ng-show="diagnosticCtrl.isSelected(1)">
+      <table>
+        <tr>
+          <td class="editProductModalContentLabel">Test Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "diagnosticCtrl.testName"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Sub-category Name</td>
+          <td class="editProductModalContentInput">
+            <select ng-model="diagnosticCtrl.subcategoryName">                               
+              <option ng-repeat="diagnostic_subcats in diagnosticCtrl.diagnostic_subcats | unique: 'name'" 
+                      value="{{diagnostic_subcats.name}}" 
+                      ng-selected="{{diagnostic_subcats.name == diagnosticCtrl.diagnostic_subcats}}">
+                      {{diagnostic_subcats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Category Name</td>
+          <td class="editProductModalContentInput">
+            <select ng-model="diagnosticCtrl.categoryName">                               
+              <option ng-repeat="diagnostic_cats in diagnosticCtrl.diagnostic_cats | unique: 'name'" 
+                      value="{{diagnostic_cats.name}}" 
+                      ng-selected="{{diagnostic_cats.name == diagnosticCtrl.diagnostic_cats}}">
+                      {{diagnostic_cats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Test Instruction</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "diagnosticCtrl.testInstruction"></input>
+          </td>
+        </tr>
+      </table>
+      <div class="editNewProductModalContentFooter">
+        <button class="editProductModalContentFooterSave" ng-click="diagnosticCtrl.approveDiagnostic(diagnosticCtrl.testName, diagnosticCtrl.subcategoryName, diagnosticCtrl.categoryName, diagnosticCtrl.testInstruction)">Approve</button>
+        <button class="editProductModalContentFooterCancel" ng-click="diagnosticCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+    <div class="box" ng-show="diagnosticCtrl.isSelected(2)">
+      <table>
+        <tr>
+          <td class="editProductModalContentLabel">Sub-category Name</td>
+          <td class="editProductModalContentInput">
+            <input type="text" ng-model = "diagnosticCtrl.subcategoryName"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="editProductModalContentLabel">Category Name</td>
+          <td class="editProductModalContentInput">
+            <select ng-model="diagnosticCtrl.categoryName">                               
+              <option ng-repeat="diagnostic_cats in diagnosticCtrl.diagnostic_cats | unique: 'name'" 
+                      value="{{diagnostic_cats.name}}" 
+                      ng-selected="{{diagnostic_cats.name == diagnosticCtrl.diagnostic_cats}}">
+                      {{diagnostic_cats.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="editNewProductModalContentFooter">
+        <button class="editProductModalContentFooterSave" ng-click="diagnosticCtrl.approveSubcategory(diagnosticCtrl.subcategoryName, diagnosticCtrl.categoryName)">Approve</button>
+        <button class="editProductModalContentFooterCancel" ng-click="diagnosticCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

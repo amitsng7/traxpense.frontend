@@ -1,0 +1,23 @@
+<div class=" box testing">
+  <div class="createNewProduct">
+    <button class="createNewProductButton" ng-click="specializationCtrl.showProductOperation('create')"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create New Specialization</button>
+  </div>
+  <div>
+    <i ng-click="specializationCtrl.cancel()" class="fa fa-repeat resetProduct" aria-hidden="true"></i>
+  </div>
+  <div class="operationOnProduct" ng-mouseover = "message = 'Please select one ID'" ng-mouseout= "message = ''">
+    <div class="editProduct">
+      <a class={{specializationCtrl.operationClass}} ng-click="specializationCtrl.showProductOperation('edit'); specializationCtrl.editProduct()">Edit</a>
+    </div>
+    <div ng-if="specializationCtrl.checked == false" class="notActiveMessage" ng-show="message != ''">{{message}}</div>
+    <div class="assignProduct">
+      <a class={{specializationCtrl.operationClass}} ng-click="specializationCtrl.showProductOperation('assign')">Assign</a>
+    </div>
+    <div class="deleteProduct">
+      <a class={{specializationCtrl.operationClass}} ng-click="specializationCtrl.showProductOperation('delete')">Delete</a>
+    </div>
+  </div>
+</div>
+<div ng-include src="'app/product/specialization/create.html'"></div>
+<div ng-include src="'app/product/specialization/edit.html'"></div>
+

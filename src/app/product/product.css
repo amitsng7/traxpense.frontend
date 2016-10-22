@@ -1,0 +1,519 @@
+.panel-logo{
+  padding-left: 54px;
+}
+
+.productNavi{
+  background-color: #A5A5A5;
+  max-height: 580px;
+  color: black;
+}
+.productNaviList{
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width:200px;
+}
+.productNaviListField{
+  padding: 5px 0px 8px 30px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.productNaviListField a{
+  text-decoration: none;
+  color: white;
+}
+.productNaviListField a:hover{
+  border-bottom: 2px solid #3d3d3d;
+  color: #3d3d3d;
+}
+.active{
+  border: 2px solid #0BA3AD;
+  border-right: none;
+  background-color: #0BA3AD;
+  color: white;
+}
+.right-main{
+  
+}
+.black-main{
+
+}
+.testing{
+  margin: 10px 20px 0px 10px;
+}
+.createNewProductButton{
+  border: none;
+  background-color: #69DBA7;
+  padding: 5px 10px 5px 10px;
+  font-weight: bold;
+  color: white;
+}
+.editProduct{
+  float: left;
+  padding: 0px 20px 0px 0px;
+  color: #BBBBBB;
+  font-weight: bold;
+  font-size: 16px;
+}
+.assignProduct{
+  float: left;
+  padding: 0px 20px 0px 0px;
+  color: #BBBBBB;
+  font-weight: bold;
+  font-size: 16px;
+}
+.deleteProduct{
+  float: left;
+  padding: 0px 20px 0px 0px;
+  color: #BBBBBB;
+  font-weight: bold;
+  font-size: 16px;
+}
+.productTableHead > tr, .productTableInner{
+  display:block;
+}
+.wrap{
+  position: relative;
+  margin: 10px 40px 0px 10px;
+}
+.productTableHead{
+  text-align: center;
+  background-color: #A5A5A5;
+  padding: 10px 0px 10px 0px;
+}
+.productTableInner {
+  text-align: center;
+  max-height: 486px;
+  overflow: auto;
+}
+.productTableInner .degreeIdRadio{
+  margin-right: 12px;
+}
+.createNewProductModal{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.createNewProductModalContent{
+  position: relative;
+  background-color: #fefefe;
+  margin: 110px 0px 0px 420px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+.createNewProductModalContentTabOne{
+  border: none;
+  padding: 5px;
+  width: 255px;
+}
+.createNewProductModalContentTabTwo{
+  border: none;
+  padding: 5px;
+  width: 255px;
+}
+.createNewProductModalContentTabLevel{
+  border: none;
+  padding: 5px;
+  width: 170px;
+}
+.createNewProductModalTabOne{
+  border: none;
+  padding: 5px;
+  width: 160px;
+}
+.createNewProductModalTabTwo{
+  border: none;
+  padding: 5px;
+  width: 160px;
+}
+.createNewProductModalTabThree{
+  border: none;
+  padding: 5px;
+  width: 160px;
+}
+.createNewProductModalContentHeader{
+  background-color: #F9F9F9;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid GRAY;
+  color: #468592;
+  font-weight: bold;
+  font-size: 17px;
+}
+.createNewProductModalContentLabel{
+  padding: 10px 10px 0px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.createNewProductModalContentInput{
+  padding: 10px 10px 0px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.createNewProductModalContentInput > Input{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.createNewProductModalContentInput > select{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.createNewProductModalContentFooterSave{
+  border: none;
+  background-color: #49D566;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 155px;
+}
+.createNewProductModalContentFooterCancel{
+  border: none;
+  background-color: #FC3A43;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 10px;
+}
+.editProductNotActive{
+  pointer-events: none;
+  cursor: default;
+}
+.editProductActive{
+  cursor: pointer;  
+}
+.editProductModal{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+.editProductModalContent{
+  position: relative;
+  background-color: #fefefe;
+  margin: 110px 0px 0px 420px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.editProductModalContentHeader{
+  background-color: #F9F9F9;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid GRAY;
+  color: #468592;
+  font-weight: bold;
+  font-size: 17px;
+}
+.editProductModalContentLabel{
+  padding: 10px 10px 0px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.editProductModalContentInput{
+  padding: 10px 10px 0px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.editProductModalContentInput > Input{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.editProductModalContentInput > select{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.editProductModalContentFooterSave{
+  border: none;
+  background-color: #49D566;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 155px;
+}
+.editProductModalContentFooterCancel{
+  border: none;
+  background-color: #FC3A43;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 10px;
+}
+.editNewProductModalContentTabOne{
+  border: none;
+  padding: 5px;
+  width: 255px;
+}
+.editNewProductModalContentTabTwo{
+  border: none;
+  padding: 5px;
+  width: 255px;
+}
+.assignProductModal{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+.assignProductModalContent{
+  position: relative;
+  background-color: #fefefe;
+  margin: 110px 0px 0px 420px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.assignProductModalContentHeader{
+  background-color: #F9F9F9;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid GRAY;
+  color: #468592;
+  font-weight: bold;
+  font-size: 17px;
+}
+.assignProductModalContentLabel{
+  padding: 10px 10px 0px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.assignProductModalContentInput{
+  padding: 10px 10px 0px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.assignProductModalContentInput > Input{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.assignProductModalContentInput > select{
+  background-color: transparent;
+  border: 0px solid;
+  background-color: #F5F5F5;
+  padding: 5px;
+  width: 295px;
+  height: 40px;
+}
+.assignProductModalContentFooterSave{
+  border: none;
+  background-color: #49D566;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 155px;
+}
+.assignProductModalContentFooterCancel{
+  border: none;
+  background-color: #FC3A43;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 10px;
+}
+.deleteProductModal{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4); 
+}
+.deleteProductModalContent{
+  position: relative;
+  background-color: #fefefe;
+  margin: 110px 0px 0px 420px;
+  padding: 0;
+  border: 1px solid #888;
+  width: 40%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.deleteProductModalContentHeader{
+  background-color: #F9F9F9;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  border-bottom: 1px solid GRAY;
+  color: #468592;
+  font-weight: bold;
+  font-size: 17px;
+}
+.deleteProductModalContentLabel{
+  padding: 10px 10px 0px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #B1B1B1;
+}
+.deleteProductModalContentID{
+  padding: 10px 10px 0px 25px;
+  font-size: 13px;
+  width: 78px;
+}
+.deleteProductModalContentDoctor{
+  padding: 10px 10px 0px 25px;
+  font-size: 13px;
+}
+.deleteProductModalContentFooterDelete{
+  border: none;
+  background-color: #49D566;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 155px;
+}
+.deleteProductModalContentFooterCannotDelete{
+  border: none;
+  background-color: grey;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 155px;
+  cursor: default;
+}
+.deleteProductModalContentFooterCancel{
+  border: none;
+  background-color: #FC3A43;
+  padding: 8px 15px 8px 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 20px 0px 20px 10px;
+}
+.notActiveMessage{
+  color: #0BA3AD;
+  position: absolute;
+  background: #EBEBEB;
+  margin: -23px 0px 0px 21px;
+  border: 1px solid #0BA3AD;
+  z-index: 11;
+  border-radius: 10px;
+  padding: 1px 3px 1px 3px;
+  font-weight: 700;
+  font-size: 11px;
+}
+.addMoreField{
+  color: grey;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 13px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.deleteField{
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 13px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.complete-page{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.1);
+}
+.loading-bar{
+  position: relative;
+  background-color: #fefefe;
+  margin: 180px 0px 0px 540px;
+  padding: 0;
+  width: 8%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.loading-image{
+  width: 25%;
+}
+.resetProduct{
+  padding: 2px;
+  margin: 0px 10px 0px 0px;
+}

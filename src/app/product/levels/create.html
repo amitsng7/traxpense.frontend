@@ -1,0 +1,93 @@
+<div class="createNewProductModal" ng-show="levelCtrl.createValue" ng-click="levelCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="box">
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(1)" ng-class="{active:levelCtrl.isSelected(1)}">Create New Level 1</button>
+      </div>
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(2)" ng-class="{active:levelCtrl.isSelected(2)}">Create New Level 2</button>
+      </div>
+      <div class="createNewProductModalContentHeader">
+        <button type="button" class="createNewProductModalContentTabLevel" ng-click="levelCtrl.selectTab(3)" ng-class="{active:levelCtrl.isSelected(3)}">Create New Level 3</button>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(1)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level1Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Layman Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level1Layman"></input>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="levelCtrl.saveLevel1(1, levelCtrl.level1Name, levelCtrl.level1Layman)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(2)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level2Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Layman Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level2Layman"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Level 1 Name</td>
+          <td class="createNewProductModalContentInput">
+            <select ng-model="levelCtrl.lastLevel1Name">                               
+              <option ng-repeat="detail in levelCtrl.level1 | unique: 'name'" 
+                      value="{{detail.name}}" 
+                      ng-selected="{{detail.name == levelCtrl.lastLevel1Name}}">
+                      {{detail.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="levelCtrl.saveLevel2(2, levelCtrl.level2Name, levelCtrl.level2Layman, levelCtrl.lastLevel1Name)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+    <div class="box" ng-show="levelCtrl.isSelected(3)">
+      <table>
+        <tr>
+          <td class="createNewProductModalContentLabel">Name</td>
+          <td class="createNewProductModalContentInput">
+            <input type="text" ng-model = "levelCtrl.level3Name"></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="createNewProductModalContentLabel">Level 2 Name</td>
+          <td class="createNewProductModalContentInput">
+            <select ng-model="levelCtrl.lastLevel2Name">                               
+              <option ng-repeat="detail in levelCtrl.details | unique: 'name'" 
+                      value="{{detail.name}}" 
+                      ng-selected="{{detail.name == levelCtrl.lastLevel2Name}}">
+                      {{detail.name}}
+              </option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="createNewProductModalContentFooter">
+        <button class="createNewProductModalContentFooterSave" ng-click="levelCtrl.saveLevel3(3, levelCtrl.level3Name, levelCtrl.lastLevel2Name)">Save</button>
+        <button class="createNewProductModalContentFooterCancel" ng-click="levelCtrl.cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/medical/createEditAssignDelete.html'"></div>
+    <div ng-if = "medicalCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="categoryId">Category ID</th>
+            <th class="categoryName">Category Name</th>
+            <th class="facilityId">Facility ID</th>
+            <th class="facilityName">Facility Name<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="equipmentId">Equipment ID</th>
+            <th class="equipmentName">Equipment Name<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="verified">Verified<i class="fa fa-filter" aria-hidden="true"></i></th>
+          </tr>
+          <tr>
+            <th class="categoryId"></th>
+            <th class="categoryName"></th>
+            <th class="facilityId"></th>
+            <th class="facilityName">
+              <select ng-model="selectedSubcat" ng-options="detail.name for detail in medicalCtrl.medical_subcats | unique:'name' | orderBy:'name'" style="width: 190px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="equipmentId"></th>
+            <th class="equipmentName">
+              <select ng-model="selectedEquipment" ng-options="detail.name for detail in medicalCtrl.details | unique:'name' | orderBy:'name'" style="width: 190px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="verified">
+              <select ng-model="selectedVerified" ng-options="detail.verified for detail in medicalCtrl.details | unique:'verified' | orderBy:'verified'">
+              <option value=""></option></i></th>
+              </select>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in medicalCtrl.details | filter:{name: selectedEquipment.name, medical_sub_category: {name: selectedSubcat.name}, verified: selectedVerified.verified} : true">
+            <td class="categoryId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "medicalCtrl.checked" ng-click="medicalCtrl.unable_link(detail.id)"></input>
+              {{detail.medical_category.id}}
+            </td>
+            <td class="categoryName">{{detail.medical_category.name}}</td>
+            <td class="facilityId">{{detail.medical_sub_category.id}}</td>
+            <td class="facilityName">{{detail.medical_sub_category.name}}</td>
+            <td class="equipmentId">{{detail.id}}</td>
+            <td class="equipmentName">{{detail.name}}</td>
+            <td class="verified">{{detail.verified}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

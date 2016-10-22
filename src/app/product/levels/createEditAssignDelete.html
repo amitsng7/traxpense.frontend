@@ -1,0 +1,25 @@
+<div class=" box testing">
+  <div class="createNewProduct">
+    <button class="createNewProductButton" ng-click="levelCtrl.showProductOperation('create')"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create New Surgery Level</button>
+  </div>
+  <div>
+    <i ng-click="levelCtrl.cancel()" class="fa fa-repeat resetProduct" aria-hidden="true"></i>
+  </div>
+  <div class="operationOnProduct" ng-mouseover = "message = 'Please select one ID'" ng-mouseout= "message = ''">
+    <div class="editProduct">
+      <a class={{levelCtrl.operationClass}} ng-click="levelCtrl.showProductOperation('edit'); levelCtrl.editProduct()">Edit</a>
+    </div>
+    <div ng-if="levelCtrl.checked == false" class="notActiveMessage" ng-show="message != ''">{{message}}</div>
+    <div class="assignProduct">
+      <a class={{levelCtrl.operationClass}} ng-click="levelCtrl.showProductOperation('assign')">Assign</a>
+    </div>
+    <div class="deleteProduct">
+      <a class={{levelCtrl.operationClass}} ng-click="levelCtrl.showProductOperation('delete'); levelCtrl.deleteProduct()">Delete</a>
+    </div>
+  </div>
+</div>
+<div ng-include src="'app/product/levels/create.html'"></div>
+<div ng-include src="'app/product/levels/edit.html'"></div>
+<!-- <div ng-include src="'app/product/levels/assign.html'"></div>
+<div ng-include src="'app/product/levels/delete.html'"></div> -->
+

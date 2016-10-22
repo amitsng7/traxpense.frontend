@@ -1,0 +1,47 @@
+.login-flex-container{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+.login-flex-container .login-row{
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.login-flex-container .login-row .login-box{
+  flex: 0 0 30%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.login-flex-container .login-row .login-box .item{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.login-flex-container .login-row .login-box .header{
+  flex: 3;
+  align-self: center;
+}
+.login-flex-container .login-row .login-box .username{
+  flex: 4;
+  align-self: center;
+}
+.login-flex-container .login-row .login-box .password{
+  flex: 4;
+  align-self: center;
+}
+.login-flex-container .login-row .login-box .submit{
+  flex: 3;
+  align-self: center;
+}
+
+.login-flex-container .login-row .login-box .login-status{
+  flex: 3;
+  align-self: center;
+}

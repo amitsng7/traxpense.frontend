@@ -1,0 +1,64 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/levels/createEditAssignDelete.html'"></div>
+    <div ng-if = "levelCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="level1Id">Level 1 ID</th>
+            <th class="level1Name">Level 1 Name</th>
+            <th class="level1Layman">Level 1 Layman Name</th>
+            <th class="level2Id">Level 2 ID</th>
+            <th class="level2Name">Level 2 Name</th>
+            <th class="level2Layman">Level 2 Layman Name</th>
+            <th class="level3Id">Level 3 ID</th>
+            <th class="level3Name">Level 3 Name</th>
+          </tr>
+          <tr>
+            <th class="level1Id"></th>
+            <th class="level1Name">
+              <select ng-model="selectedLevel1Name" ng-options="detail.parent.name for detail in levelCtrl.modifyDetails | unique:'parent.name' | orderBy:'parent.name' | filter:{parent: {name: '!!'}}" style="width: 140px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="level1Layman">
+              <select ng-model="selectedLevel1Layman" ng-options="detail.parent.layman_name for detail in levelCtrl.modifyDetails | unique:'parent.layman_name' | orderBy:'parent.layman_name' | filter:{parent:{layman_name: '!!'}}" style="width: 140px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="level2Id"></th>
+            <th class="level2Name">
+              <select ng-model="selectedLevel2Name" ng-options="detail.name for detail in levelCtrl.modifyDetails | unique:'name' | orderBy:'name' | filter:{name: '!!'}" style="width: 140px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="level2Layman">
+              <select ng-model="selectedLevel2Layman" ng-options="detail.layman_name for detail in levelCtrl.modifyDetails | unique:'layman_name' | orderBy:'layman_name' | filter:{layman_name: '!!'}" style="width: 140px">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="level3Id"></th>
+            <th class="level3Name"></th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in levelCtrl.modifyDetails | filter: {name: selectedLevel2Name.name, layman_name: selectedLevel2Layman.layman_name} | filter:levelCtrl.customFilter(selectedLevel1Name, 'level1Name', detail) | filter:levelCtrl.customFilter(selectedLevel1Layman, 'level1Layman', detail):true track by $index">
+            <td class="level1Id">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "levelCtrl.checked" ng-click="levelCtrl.unable_link(detail.parent.id, detail.id, detail.children[0].id)"></input>
+              {{detail.parent.id}}
+            </td>
+            <td class="level1Name">{{detail.parent.name}}</td>
+            <td class="level1Layman">{{detail.parent.layman_name}}</td>
+            <td class="level2Id">{{detail.id}}</td>
+            <td class="level2Name">{{detail.name}}</td>
+            <td class="level2Layman">{{detail.layman_name}}</td>
+            <td class="level3Id">{{detail.children[0].id}}</td>
+            <td class="level3Name">{{detail.children[0].name}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

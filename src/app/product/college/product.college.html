@@ -1,0 +1,36 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/college/createEditAssignDelete.html'"></div>
+    <div ng-if = "collegeCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="collegeId">College ID</th>
+            <th class="collegeName">College Name</th>
+            <th class="educationStream">Education Stream<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="verified">Verified<i class="fa fa-filter" aria-hidden="true"></i></th>
+          </tr>
+          <tr>
+            <th class="collegeId"></th>
+            <th class="collegeName"></th>
+            <th class="educationStream"><select ng-model="selectedStream" ng-options="detail.education_stream.name for detail in collegeCtrl.details | unique:'education_stream.name' | orderBy:'education_stream.name'"</select><option value=""></th>
+            <th class="verified"><select ng-model="selectedVerified" ng-options="detail.verified for detail in collegeCtrl.details | unique:'verified' | orderBy:'verified'"</select><option value=""></option></i></th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in collegeCtrl.details | filter:{education_stream: {name: selectedStream.education_stream.name}, verified: selectedVerified.verified} : true">
+            <td class="collegeId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "collegeCtrl.checked" ng-click="collegeCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="collegeName">{{detail.name}}</td>
+            <td class="educationStream">{{detail.education_stream.name}}</td>
+            <td class="verified">{{detail.verified}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

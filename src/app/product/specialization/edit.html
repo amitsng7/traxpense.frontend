@@ -1,0 +1,41 @@
+<div class="editProductModal" ng-show="specializationCtrl.editValue" ng-click="specializationCtrl.closeProductOperation($event, 'editProductModal')">
+  <div class="editProductModalContent">
+    <div class="editProductModalContentHeader">Edit Specialization</div>
+    <table>
+      <tr>
+        <td class="editProductModalContentLabel">Degree Name</td>
+        <td class="editProductModalContentInput">
+          <input type="text" ng-model="specializationCtrl.specializationName"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Frequency</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="specializationCtrl.frequency_selected">                               
+            <option ng-repeat="detail in specializationCtrl.details | unique: 'frequency'" 
+                    value="{{detail.frequency}}" 
+                    ng-selected="{{detail.frequency == specializationCtrl.frequency_selected}}">
+                    {{detail.frequency}}
+            </option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td class="editProductModalContentLabel">Speciality Linked</td>
+        <td class="editProductModalContentInput">
+          <select ng-model="specializationCtrl.hospital_speciality_id">                               
+            <option ng-repeat="hospital_speciality in specializationCtrl.hospital_speciality | unique: 'name'" 
+                    value="{{hospital_speciality.name}}" 
+                    ng-selected="{{hospital_speciality.name == specializationCtrl.hospital_speciality_id}}">
+                    {{hospital_speciality.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div class="editProductModalContentFooter">
+      <button class="editProductModalContentFooterSave" ng-click="specializationCtrl.approve(specializationCtrl.specializationName, specializationCtrl.frequency_selected, specializationCtrl.hospital_speciality_id)">Approve</button>
+      <button class="editProductModalContentFooterCancel" ng-click="specializationCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

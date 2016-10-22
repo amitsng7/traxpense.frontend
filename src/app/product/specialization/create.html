@@ -1,0 +1,35 @@
+<div class="createNewProductModal" ng-show="specializationCtrl.createValue" ng-click="specializationCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="createNewProductModalContentHeader">Create New Specialization</div>
+    <table>
+      <tr>
+        <td class="createNewProductModalContentLabel">Specialization Name</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "specializationCtrl.specializationName"></input>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">Frequency</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="specializationCtrl.frequency" ng-options="detail.frequency for detail in specializationCtrl.details | unique:'frequency'"></select>
+        </td>
+      </tr>
+      <tr>
+        <td class="createNewProductModalContentLabel">Speciality Linked</td>
+        <td class="createNewProductModalContentInput">
+          <select ng-model="specializationCtrl.hospital_speciality_id">                               
+            <option ng-repeat="hospital_speciality in specializationCtrl.hospital_speciality | unique: 'name'" 
+                    value="{{hospital_speciality.name}}" 
+                    ng-selected="{{hospital_speciality.name == specializationCtrl.hospital_speciality_id}}">
+                    {{hospital_speciality.name}}
+            </option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <div class="createNewProductModalContentFooter">
+      <button class="createNewProductModalContentFooterSave" ng-click="specializationCtrl.save(specializationCtrl.specializationName, specializationCtrl.frequency, specializationCtrl.hospital_speciality_id)">Save</button>
+      <button class="createNewProductModalContentFooterCancel" ng-click="specializationCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

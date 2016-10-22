@@ -1,0 +1,17 @@
+<div class="assignProductModal" ng-show="educationCtrl.assignValue" ng-click="educationCtrl.closeProductOperation($event, 'assignProductModal')">
+  <div class="assignProductModalContent">
+    <div class="assignProductModalContentHeader">Assign Education Degree</div>
+    <table>
+      <tr>
+        <td class="assignProductModalContentLabel">Degree Name</td>
+        <td class="assignProductModalContentInput">
+          <input type="text" placeholder="Search by Degree Name" ng-model="educationCtrl.assignDegree"  uib-typeahead="detail as detail.name for detail in educationCtrl.details | filter:$viewValue | limitTo: 10 | unique:'name'" typeahead-editable="false"/>
+        </td>
+      </tr>
+    </table>
+    <div class="assignProductModalContentFooter">
+      <button class="assignProductModalContentFooterSave" ng-click="educationCtrl.assignSave(educationCtrl.assignDegree)">Save</button>
+      <button class="assignProductModalContentFooterCancel" ng-click="educationCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

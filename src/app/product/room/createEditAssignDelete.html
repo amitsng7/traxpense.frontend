@@ -1,0 +1,25 @@
+<div class=" box testing">
+  <div class="createNewProduct">
+    <button class="createNewProductButton" ng-click="roomCtrl.showProductOperation('create')"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Create new Room Amenity</button>
+  </div>
+  <div>
+    <i ng-click="roomCtrl.cancel()" class="fa fa-repeat resetProduct" aria-hidden="true"></i>
+  </div>
+  <div class="operationOnProduct" ng-mouseover = "message = 'Please select one ID'" ng-mouseout= "message = ''">
+    <div class="editProduct">
+      <a class={{roomCtrl.operationClass}} ng-click="roomCtrl.showProductOperation('edit'); roomCtrl.editProduct()">Edit</a>
+    </div>
+    <div ng-if="roomCtrl.checked == false" class="notActiveMessage" ng-show="message != ''">{{message}}</div>
+    <div class="assignProduct">
+      <a class={{roomCtrl.operationClass}} ng-click="roomCtrl.showProductOperation('assign')">Assign</a>
+    </div>
+    <div class="deleteProduct">
+      <a class={{roomCtrl.operationClass}} ng-click="roomCtrl.showProductOperation('delete'); roomCtrl.deleteProduct()">Delete</a>
+    </div>
+  </div>
+</div>
+<div ng-include src="'app/product/room/create.html'"></div>
+<div ng-include src="'app/product/room/edit.html'"></div>
+<div ng-include src="'app/product/room/assign.html'"></div>
+<div ng-include src="'app/product/room/delete.html'"></div>
+

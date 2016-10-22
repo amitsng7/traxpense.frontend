@@ -1,0 +1,24 @@
+@import url(https://fonts.googleapis.com/css?family=Signika+Negative|Oxygen);
+
+.appointment-flex-container{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: linen;
+  padding-bottom: 30px;
+}
+
+.appointment-flex-container .header{
+  font-family: "Signika Negative",Helvetica,Arial,sans-serif;
+  color: teal;
+  background-color: lavender;
+  margin-right: 30px;
+}
+
+.appointment-flex-container .header .user-name{
+  font-size: 14px;
+}
+.appointment-flex-container .header .logout{
+  font-size: 10px;
+}

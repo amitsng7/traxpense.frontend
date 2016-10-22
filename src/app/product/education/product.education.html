@@ -1,0 +1,81 @@
+<section class="box">
+  <div ui-view="navMenu"></div>
+  <div class="black-main">
+    <div ng-include src="'app/product/education/createEditAssignDelete.html'"></div>
+    <div ng-if = "educationCtrl.show == true" ng-include src="'app/product/loading.html'"></div>
+    <div class="box wrap" table-scrolled="loadmore()">
+      <table class="table table-bordered table-condensed">
+        <thead class="productTableHead">
+          <tr>
+            <th class="degreeId">Degree ID</th>
+            <th class="degreeName">Degree Name</th>
+            <th class="abbrevation">Abbrevation</th>
+            <th class="specialization">Specialization<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="specilityType">Specility Type<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="level">Level<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="frequency">Frequency<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="prefix">Prefix<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="typeOfEducation">Type of Education<i class="fa fa-filter" aria-hidden="true"></i></th>
+            <th class="verified">Verified<i class="fa fa-filter" aria-hidden="true"></i></th>
+          </tr>
+          <tr>
+            <th class="degreeId"></th>
+            <th class="degreeName"></th>
+            <th class="abbrevation"></th>
+            <th class="specialization">
+              <select ng-model="selectedSpecialization" ng-options="detail.specialization_id for detail in educationCtrl.details | unique:'specialization_id' | orderBy:'specialization_id' | filter:{specialization_id: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="specilityType">
+              <select ng-model="selectedSpecilityType" ng-options="detail.speciality_type_id for detail in educationCtrl.details | unique:'speciality_type_id' | orderBy:'speciality_type_id' | filter:{speciality_type_id: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="level">
+              <select ng-model="selectedLevel" ng-options="detail.level for detail in educationCtrl.details | unique:'level' | orderBy:'level' | filter:{level: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="frequency">
+              <select ng-model="selectedFrequency" ng-options="detail.frequency for detail in educationCtrl.details | unique:'frequency' | orderBy:'frequency' | filter:{frequency: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="prefix">
+              <select ng-model="selectedPrefix" ng-options="detail.prefix for detail in educationCtrl.details | unique:'prefix' | orderBy:'prefix' | filter:{prefix: '!!'}"</select>
+              <option value=""></option>
+            </th>
+            <th class="typeOfEducation">
+              <select ng-model="selectedEducationType" ng-options="detail.education_type_id for detail in educationCtrl.details | unique:'education_type_id' | orderBy:'education_type_id' | filter:{education_type_id: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+            <th class="verified">
+              <select ng-model="selectedVerified" ng-options="detail.verified for detail in educationCtrl.details | unique:'verified' | orderBy:'verified' | filter:{verified: '!!'}">
+              <option value=""></option>
+              </select>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="productTableInner">
+          <tr ng-repeat = "detail in educationCtrl.details | filter:{specialization_id: selectedSpecialization.specialization_id, speciality_type_id: selectedSpecilityType.speciality_type_id, level: selectedLevel.level, frequency: selectedFrequency.frequency, prefix: selectedPrefix.prefix, education_type_id: selectedEducationType.education_type_id, verified: selectedVerified.verified} : true">
+            <td class="degreeId">
+              <input class="degreeIdRadio" name="choose" type="radio" ng-disabled = "educationCtrl.checked" ng-click="educationCtrl.unable_link(detail.id)"></input>
+              {{detail.id}}
+            </td>
+            <td class="degreeName">{{detail.name}}</td>
+            <td class="abbrevation">{{detail.abbreviation}}</td>
+            <td class="specialization">{{detail.specialization_id}}</td>
+            <td class="specilityType">{{detail.speciality_type_id}}</td>
+            <td class="level">{{detail.level}}</td>
+            <td class="frequency">{{detail.frequency}}</td>
+            <td class="prefix">{{detail.prefix}}</td>
+            <td class="typeOfEducation">{{detail.education_type_id}}</td>
+            <td class="verified">{{detail.verified}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

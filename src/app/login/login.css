@@ -1,0 +1,47 @@
+.login-flex-container{
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
+}
+
+.login-flex-container .login-row .login-box{
+  min-height: 50vh;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+.login-flex-container .login-row .login-box header{
+  font-size: 20px;
+  font-family: Righteous,Helvetica,Arial,sans-serif;
+}
+
+.login-flex-container .login-row .login-box input{
+  font-size: 14px;
+  font-family: Righteous,Helvetica,Arial,sans-serif;
+  width: 250px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.login-flex-container .login-row .login-box .item{
+  height: 20%;
+}
+
+.login-flex-container .login-row .login-box .login-btn{
+  width: 100px;
+  height: 35px;
+  border-radius:5px;
+  font-family: Righteous,Helvetica,Arial,sans-serif;
+  background-color: rgb(0, 100, 100);
+  color: antiquewhite;
+  transition: background-color 0.5s ease-in-out,color 0.5s ease-in-out;
+}
+
+.login-flex-container .login-row .login-box .login-btn:hover{
+  background-color: antiquewhite;
+  color: rgb(0, 100, 100);
+}

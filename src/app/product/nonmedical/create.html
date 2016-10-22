@@ -1,0 +1,17 @@
+<div class="createNewProductModal" ng-show="nonmedicalCtrl.createValue" ng-click="nonmedicalCtrl.closeProductOperation($event, 'createNewProductModal')">
+  <div class="createNewProductModalContent">
+    <div class="createNewProductModalContentHeader">Create New non-medical Facility</div>
+    <table>
+      <tr>
+        <td class="createNewProductModalContentLabel">Name</td>
+        <td class="createNewProductModalContentInput">
+          <input type="text" ng-model = "nonmedicalCtrl.nonmedicalName"></input>
+        </td>
+      </tr>
+    </table>
+    <div class="createNewProductModalContentFooter">
+      <button class="createNewProductModalContentFooterSave" ng-click="nonmedicalCtrl.save(nonmedicalCtrl.nonmedicalName)">Save</button>
+      <button class="createNewProductModalContentFooterCancel" ng-click="nonmedicalCtrl.cancel()">Cancel</button>
+    </div>
+  </div>
+</div>
